@@ -1,0 +1,89 @@
+﻿@model MVCWEF.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "AllDetails";
+}
+
+<h1>AllDetails</h1>
+
+<h2>ProductDetails</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductList[0].ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductList[0].ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductList[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductList[0].Count)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ProductList) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+
+<hr />
+
+<h2>Seller Details</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.SellerList[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.SellerList[0].Name)
+            </th>
+        </tr> 
+    </thead>
+
+
+
+    <tbody>
+
+        @foreach (var item in Model.SellerList)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+            </tr>
+        }
+        
+    </tbody>
+
+
+
+
+</table>
+
+
+
+
